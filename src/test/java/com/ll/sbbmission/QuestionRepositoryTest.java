@@ -1,5 +1,7 @@
 package com.ll.sbbmission;
 
+import com.ll.sbbmission.question.Question;
+import com.ll.sbbmission.question.QuestionRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
