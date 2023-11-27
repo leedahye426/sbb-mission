@@ -9,7 +9,7 @@ public class MainController {
 
     @GetMapping("/")
     @ResponseBody
-    public String index() {
-        return "hello spring";
+    public String root() {
+        return "redirect:/question/list";
     }
 }
