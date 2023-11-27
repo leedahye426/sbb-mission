@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 @RequiredArgsConstructor
@@ -25,13 +24,9 @@ public class QuestionController {
 
     @GetMapping("/detail/{id}")
     public String detail(@PathVariable("id") Integer id, Model model) {
-        Optional<Question> question = questionService.getQuestion(id);
+        Question question = questionService.getQuestion(id);
 
-        if(question.isPresent()) {
-            model.addAttribute(question.get());
-        } else {
-            throw new RuntimeException("entity not found");
-        }
+        model.addAttribute("question", question);
 
         return "question_detail";
     }

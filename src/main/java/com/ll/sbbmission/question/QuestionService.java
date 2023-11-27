@@ -16,8 +16,13 @@ public class QuestionService {
         return questionRepository.findAll();
     }
 
-    public Optional<Question> getQuestion(Integer id) {
-        return questionRepository.findById(id);
+    public Question getQuestion(Integer id) {
+        Optional<Question> question = questionRepository.findById(id);
+        if(question.isPresent()) {
+            return question.get();
+        } else {
+            throw new RuntimeException("entity not found");
+        }
     }
 
     public void save(Question question) {
