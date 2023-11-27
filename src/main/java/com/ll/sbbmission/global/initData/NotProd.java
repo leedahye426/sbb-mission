@@ -18,7 +18,7 @@ public class NotProd {
             question1.setId(1);
             question1.setSubject("스프링 부트 모델 질문입니다.");
             question1.setContent("id는 자동으로 생성되나요?");
-            question1.setCreateTime(LocalDateTime.now());
+            question1.setCreateDate(LocalDateTime.now());
 
             questionService.save(question1);
         };
